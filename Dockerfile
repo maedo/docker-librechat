@@ -60,7 +60,7 @@ RUN \
     npm cache clean --force
 
 # Node API setup
-EXPOSE 3080
+EXPOSE 3081
 ENV HOST=0.0.0.0
 CMD ["npm", "run", "backend"]
 
