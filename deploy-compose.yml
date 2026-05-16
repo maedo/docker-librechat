@@ -1,8 +1,3 @@
-networks:
-  sg_mcp_network:
-    external: true
-    name: sg_mcp_network
-
 services:
   api:
     # build:
@@ -19,9 +14,6 @@ services:
     restart: always
     extra_hosts:
     - "host.docker.internal:host-gateway"
-    networks:
-      - default
-      - sg_mcp_network
     env_file:
       - .env
     environment:
@@ -37,7 +29,7 @@ services:
         target: /app/librechat.yaml
       - ./images:/app/client/public/images
       - ./uploads:/app/uploads
-      - ./logs:/app/logs
+      - ./logs:/app/api/logs
 
   client:
     image: nginx:1.27.0-alpine
