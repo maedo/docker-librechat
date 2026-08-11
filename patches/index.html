@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <base href="/" />
+    <meta name="theme-color" content="#171717" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="LibreChat - An open source chat application with support for multiple AI models" />
+    <title>LibreChat</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon-180x180.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+    <script>
+      const theme = localStorage.getItem('color-theme');
+      const loadingContainerStyle = document.createElement('style');
+      let backgroundColor;
+
+      if (theme === 'dark') {
+        backgroundColor = '#0d0d0d';
+      } else if (theme === 'light') {
+        backgroundColor = '#ffffff';
+      } else if (theme === 'system') {
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        backgroundColor = prefersDarkScheme ? '#0d0d0d' : '#ffffff';
+      } else {
+        backgroundColor = '#ffffff';
+      }
+
+      loadingContainerStyle.innerHTML = `
+        #loading-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          background-color: ${backgroundColor};
+        }
+      `;
+      document.head.appendChild(loadingContainerStyle);
+    </script>
+    <script type="module" crossorigin src="./assets/index.DZLJnVzG.js?v=xlsx3"></script>
+    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime.Cyuzqnbw.js">
+    <link rel="modulepreload" crossorigin href="./assets/codemirror-core.DCeggAsc.js">
+    <link rel="modulepreload" crossorigin href="./assets/http-client.D1qXypdn.js">
+    <link rel="modulepreload" crossorigin href="./assets/mermaid.BTXUlb2J.js">
+    <link rel="modulepreload" crossorigin href="./assets/advanced-inputs.BKUrQSBb.js">
+    <link rel="modulepreload" crossorigin href="./assets/animations.Cg77P7xO.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-vtree.Bv__m2K7.js">
+    <link rel="modulepreload" crossorigin href="./assets/tanstack-vendor.DnDa8rsp.js">
+    <link rel="modulepreload" crossorigin href="./assets/validation.DV1yC6np.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor.CRj36Spd.js">
+    <link rel="modulepreload" crossorigin href="./assets/avatars.CH7OGiPh.js">
+    <link rel="modulepreload" crossorigin href="./assets/headlessui.CLu2eCui.js">
+    <link rel="modulepreload" crossorigin href="./assets/radix-ui.Eslr_yST.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-interactions.Ggqtj1A5.js">
+    <link rel="modulepreload" crossorigin href="./assets/routing.BSpJ4wvA.js">
+    <link rel="modulepreload" crossorigin href="./assets/markdown-processing.D1YqoOMh.js">
+    <link rel="modulepreload" crossorigin href="./assets/date-utils.7tLVf9uC.js">
+    <link rel="modulepreload" crossorigin href="./assets/framer-motion.CMPOPEls.js">
+    <link rel="modulepreload" crossorigin href="./assets/i18n.eyFv_8aP.js">
+    <link rel="modulepreload" crossorigin href="./assets/utilities.B8O80BWK.js">
+    <link rel="modulepreload" crossorigin href="./assets/forms.BEEooEiq.js">
+    <link rel="modulepreload" crossorigin href="./assets/virtualization.B9qjZr6x.js">
+    <link rel="modulepreload" crossorigin href="./assets/hooks.Bn7Rj8P9.js">
+    <link rel="modulepreload" crossorigin href="./assets/sandpack.CsYyKKds.js">
+    <link rel="modulepreload" crossorigin href="./assets/MyFilesModal.qQUEbP4O.js">
+    <link rel="modulepreload" crossorigin href="./assets/security-ui.BjsCPful.js">
+    <link rel="modulepreload" crossorigin href="./assets/ProjectCreateDialog.DEuUbMnC.js">
+    <link rel="modulepreload" crossorigin href="./assets/forms.CyywJZ0l.js">
+    <link rel="modulepreload" crossorigin href="./assets/locales.OvRxdWho.js">
+    <link rel="modulepreload" crossorigin href="./assets/polyfills.BnDHDYRr.js">
+    <link rel="modulepreload" crossorigin href="./assets/code-editor.CMtCNxFi.js">
+    <link rel="modulepreload" crossorigin href="./assets/math-katex.BMlcaHSk.js">
+    <link rel="stylesheet" crossorigin href="./assets/math-katex.uZ8_QngQ.css">
+    <link rel="stylesheet" crossorigin href="./assets/index.D-Yj8JtC.css">
+  <link rel="manifest" href="./manifest.webmanifest" crossorigin="use-credentials"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body>
+    <div id="root">
+      <div id="loading-container"></div>
+    </div>
+  </body>
+</html>
